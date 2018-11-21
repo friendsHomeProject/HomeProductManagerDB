@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Data;
-
+using Repository;
 
 namespace HomeProductManagerApi
 {
@@ -28,6 +28,12 @@ namespace HomeProductManagerApi
         {
             services.AddDbContext<HomeProductManagerContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("ContextConnection")));
+
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IPeriodTypeRepository, PeriodTypeRepository>();
+            services.AddScoped<IUnitTypeRepository, UnitTypeRepository>();
 
             // Add framework services.
             services.AddMvc();
