@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "67bf7a3a-ae94-322e-c51c-008266896bc4",
+		"name": "HomePruductsApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GetProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:59904/api/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tid : 1,\n\tname : 'לבן',\n\tcategoryId : 2,\n\tuserId : 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tname : 'new product',\n\tcategoryId : 2,\n\tuserId : 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "GetCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tname : 'מוצרי מזון בסיסי'\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tid : 2,\n\tname : 'Milk Category'\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/category/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:59904/api/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/category/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Period Types",
+			"item": [
+				{
+					"name": "GetPeriodTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/periodType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"periodType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePeriodType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tname : 'שנה'\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/periodType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"periodType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePeriodType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tid : 1,\n\tname : 'חודש'\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/periodType/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"periodType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePeriodType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:59904/api/periodType/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"periodType",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPeriodType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/periodType/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"periodType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unit Types",
+			"item": [
+				{
+					"name": "GetUnitTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/unitType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"unitType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUnitType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/unitType/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"unitType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUnitType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tname : 'ליטר'\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/unitType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"unitType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUnitType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tid : 1,\n\tname : 'חבילה'\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/unitType/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"unitType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUnitType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:59904/api/unitType/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"unitType",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
