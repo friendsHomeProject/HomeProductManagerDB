@@ -16,6 +16,8 @@ namespace Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<ProductStock> ProductsStock { get; set; }
+
         public DbSet<PeriodType> PeriodTypes { get; set; }
 
         public DbSet<UnitType> UnitTypes { get; set; }

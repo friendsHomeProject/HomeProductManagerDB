@@ -18,5 +18,13 @@ namespace Common.Models
         /// The name.
         /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the period in days.
+        /// </summary>
+        /// <value>
+        /// The period in days.
+        /// </value>
+        public int PeriodInDays { get; set; }
     }
 }

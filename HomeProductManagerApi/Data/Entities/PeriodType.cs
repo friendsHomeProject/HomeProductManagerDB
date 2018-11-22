@@ -8,5 +8,8 @@ namespace Data.Entities
         public int? PeriodTypeId { get; set; }
 
         public string PeriodTypeName { get; set; }
+
+        public int PeriodInDays { get; set; }
+
     }
 }

@@ -64,7 +64,8 @@ namespace Repository
                 periodTypes.Add(new PeriodTypeModel
                 {
                     Id = periodType.PeriodTypeId,
-                    Name = periodType.PeriodTypeName
+                    Name = periodType.PeriodTypeName,
+                    PeriodInDays = periodType.PeriodInDays
 
                 });
             }
@@ -84,7 +85,8 @@ namespace Repository
             return new PeriodTypeModel
             {
                 Id = periodType.PeriodTypeId,
-                Name = periodType.PeriodTypeName
+                Name = periodType.PeriodTypeName,
+                PeriodInDays = periodType.PeriodInDays
             };
         }
 
@@ -113,10 +115,16 @@ namespace Repository
             {
                 periodType = GetPeriodTypeById(model.Id.Value);
                 periodType.PeriodTypeName = model.Name;
+                periodType.PeriodInDays = model.PeriodInDays;
             }
             else
             {
-                periodType = new PeriodType { PeriodTypeName = model.Name };
+                periodType = new PeriodType
+                {
+                    PeriodTypeName = model.Name,
+                    PeriodInDays = model.PeriodInDays
+                };
+
                 _context.PeriodTypes.Add(periodType);
             }
 

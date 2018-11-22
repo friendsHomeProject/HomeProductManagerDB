@@ -15,5 +15,8 @@ namespace Data.Entities
         public int ProductCategoryId { get; set; }
 
         public int UserId { get; set; }
+
+        [ForeignKey("ProductCategoryId")]
+        public Category Category { get; set; }
     }
 }

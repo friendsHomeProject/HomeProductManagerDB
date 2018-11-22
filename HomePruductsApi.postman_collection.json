@@ -121,7 +121,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\tname : 'new product',\n\tcategoryId : 2,\n\tuserId : 1\n}"
+							"raw": "{\n\tname : 'חלב',\n\tcategoryId : 2,\n\tuserId : 1\n}"
 						},
 						"url": {
 							"raw": "http://localhost:59904/api/product",
@@ -133,6 +133,176 @@
 							"path": [
 								"api",
 								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products Stock",
+			"item": [
+				{
+					"name": "GetProductsStock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/productStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"productStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GatMissingProductsForPeriod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/productStock/missingProducts?periodTypeId=1&userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"productStock",
+								"missingProducts"
+							],
+							"query": [
+								{
+									"key": "periodTypeId",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductStock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/productStock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"productStock",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProductStock",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:59904/api/productStock/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"productStock",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProductStock",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tproductId: 2,\n\tperiodTypeId : 1,\n\tuserId : 1,\n\tunitTypeId : 2,\n\tunitAmount : 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/productStock/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"productStock",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductStock",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\tproductId: 1,\n\tperiodTypeId : 1,\n\tuserId : 1,\n\tunitTypeId : 2,\n\tunitAmount : 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:59904/api/productStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "59904",
+							"path": [
+								"api",
+								"productStock"
 							]
 						}
 					},
@@ -208,7 +378,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\tid : 2,\n\tname : 'Milk Category'\n}"
+							"raw": "{\n\tid : 2,\n\tname : 'מוצרי חלב'\n}"
 						},
 						"url": {
 							"raw": "http://localhost:59904/api/category/2",

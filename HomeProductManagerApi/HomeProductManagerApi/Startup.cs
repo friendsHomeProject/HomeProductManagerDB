@@ -32,6 +32,7 @@ namespace HomeProductManagerApi
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductStockRepository, ProductStockRepository>();
             services.AddScoped<IPeriodTypeRepository, PeriodTypeRepository>();
             services.AddScoped<IUnitTypeRepository, UnitTypeRepository>();
 

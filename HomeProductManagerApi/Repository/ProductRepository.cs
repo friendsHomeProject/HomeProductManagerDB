@@ -4,6 +4,7 @@ using Data;
 using System.Linq;
 using Data.Entities;
 using Common.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository
 {
@@ -171,7 +172,7 @@ namespace Repository
         /// </returns>
         private bool IsCategoryExists(int categoryId)
         {
-            return _context.Categories.Any(category => category.CategoryId == categoryId);
+            return _context.Categories.AsNoTracking().Any(category => category.CategoryId == categoryId);
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Repository
         /// </returns>
         private bool IsUserExists(int userId)
         {
-            return _context.Users.Any(user => user.Id == userId);
+            return _context.Users.AsNoTracking().Any(user => user.Id == userId);
         }
 
         #endregion
