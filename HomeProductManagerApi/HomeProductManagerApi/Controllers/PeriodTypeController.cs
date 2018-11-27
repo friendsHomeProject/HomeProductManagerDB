@@ -100,6 +100,7 @@ namespace HomeProductManagerApi.Controllers
         {
             try
             {
+                model.Id = periodTypeId;
                 _periodTypeRepository.UpdatePeriodType(model);
 
                 return Ok();

@@ -52,11 +52,13 @@ namespace Repository
         /// Gets all products.
         /// </summary>
         /// <returns></returns>
-        public IList<ProductModel> GetAllProducts()
+        public IList<ProductModel> GetAllProducts(int? categoryId)
         {
             var products = new List<ProductModel>();
 
-            foreach (var product in _context.Products)
+            var allProducts = _context.Products.Where(pro => !categoryId.HasValue || pro.ProductCategoryId == categoryId.Value);
+
+            foreach (var product in allProducts)
             {
                 var productModel = CreateProductModel(product);
                 products.Add(productModel);

@@ -100,6 +100,7 @@ namespace HomeProductManagerApi.Controllers
         {
             try
             {
+                model.Id = unitTypeId;
                 _unitTypeRepository.UpdateUnitType(model);
 
                 return Ok();

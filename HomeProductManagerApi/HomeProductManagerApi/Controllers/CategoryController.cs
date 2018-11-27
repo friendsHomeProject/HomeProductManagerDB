@@ -77,6 +77,7 @@ namespace HomeProductManagerApi.Controllers
         {
             try
             {
+                model.Id = categoryId;
                 _categoryRepository.UpdateCategory(model);
 
                 return Ok();

@@ -35,11 +35,11 @@ namespace HomeProductManagerApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult GatAllProducts()
+        public IActionResult GatAllProducts(int? categoryId = null)
         {
             try
             {
-                IList<ProductModel> products = _productRepository.GetAllProducts();
+                IList<ProductModel> products = _productRepository.GetAllProducts(categoryId);
 
                 return Ok(products);
             }
@@ -84,6 +84,7 @@ namespace HomeProductManagerApi.Controllers
         {
             try
             {
+                model.Id = productId;
                 _productRepository.UpdateProduct(model);
 
                 return Ok();

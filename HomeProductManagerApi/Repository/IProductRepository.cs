@@ -20,8 +20,9 @@ namespace Repository
         /// <summary>
         /// Gets all products.
         /// </summary>
+        /// <param name="categoryId">The category identifier.</param>
         /// <returns></returns>
-        IList<ProductModel> GetAllProducts();
+        IList<ProductModel> GetAllProducts(int? categoryId = null);
 
         /// <summary>
         /// Gets the product.

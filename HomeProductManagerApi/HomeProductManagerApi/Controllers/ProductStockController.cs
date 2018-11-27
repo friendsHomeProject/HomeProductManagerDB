@@ -111,6 +111,7 @@ namespace HomeProductManagerApi.Controllers
         {
             try
             {
+                model.Id = productStockId;
                 await _productStockRepository.UpdateProductStock(model);
 
                 return Ok();
