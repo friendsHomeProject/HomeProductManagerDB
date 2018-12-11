@@ -15,13 +15,25 @@ namespace HomeProductManagerApi.Controllers
             m_UserRepository = userRepository;
         }
 
-        /// <summary>
-        /// Gets the specified user.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="password">The password.</param>
-        /// <returns></returns>
-        [HttpGet]
+		/// <summary>
+		/// login with specified user.
+		/// </summary>
+		/// <param name="name">The name.</param>
+		/// <param name="password">The password.</param>
+		/// <returns></returns>
+		[HttpPost("login")]
+		public IActionResult Login([FromQuery] string name, [FromQuery] string password)
+		{
+			return Ok();
+		}
+
+		/// <summary>
+		/// Gets the specified user.
+		/// </summary>
+		/// <param name="name">The name.</param>
+		/// <param name="password">The password.</param>
+		/// <returns></returns>
+		[HttpGet]
         public IActionResult Get([FromQuery] string name, [FromQuery] string password)
         {
             UserModel user = m_UserRepository.GetUser(name, password);

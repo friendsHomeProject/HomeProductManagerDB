@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Repository;
+using System;
 
 namespace HomeProductManagerApi
 {
@@ -26,7 +27,9 @@ namespace HomeProductManagerApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<HomeProductManagerContext>(opt =>
+            services.AddCors();
+
+			services.AddDbContext<HomeProductManagerContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("ContextConnection")));
 
             services.AddScoped<IUserRepository, UserRepository>();
@@ -46,7 +49,14 @@ namespace HomeProductManagerApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
-        }
-    }
+			app.UseCors(builder =>
+				builder.AllowAnyHeader()
+					.AllowAnyMethod()
+					.AllowAnyOrigin()
+					.SetPreflightMaxAge(TimeSpan.FromHours(12)));
+
+			app.UseMvc();
+
+		}
+	}
 }
