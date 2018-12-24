@@ -29,7 +29,7 @@ namespace HomeProductManagerApi
         {
             services.AddCors();
 
-			services.AddDbContext<HomeProductManagerContext>(opt =>
+            services.AddDbContext<HomeProductManagerContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("ContextConnection")));
 
             services.AddScoped<IUserRepository, UserRepository>();
@@ -40,7 +40,17 @@ namespace HomeProductManagerApi
             services.AddScoped<IUnitTypeRepository, UnitTypeRepository>();
 
             // Add framework services.
-            services.AddMvc();
+            services.AddMvcCore()
+                    .AddAuthorization()
+                    .AddJsonFormatters();
+
+            services.AddAuthentication("Bearer")
+                     .AddIdentityServerAuthentication(options =>
+                     {
+                         options.Authority = "http://localhost:5000";
+                         options.RequireHttpsMetadata = false;
+                         options.ApiName = "api1";
+                     });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,14 +59,16 @@ namespace HomeProductManagerApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-			app.UseCors(builder =>
-				builder.AllowAnyHeader()
-					.AllowAnyMethod()
-					.AllowAnyOrigin()
-					.SetPreflightMaxAge(TimeSpan.FromHours(12)));
+            app.UseCors(builder =>
+                builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin()
+                    .SetPreflightMaxAge(TimeSpan.FromHours(12)));
 
-			app.UseMvc();
+            app.UseAuthentication();
 
-		}
-	}
+            app.UseMvc();
+
+        }
+    }
 }
